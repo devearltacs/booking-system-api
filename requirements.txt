@@ -1,0 +1,10 @@
+asgiref
+colorama
+Django
+iniconfig
+packaging
+pillow
+pluggy
+pytest
+sqlparse
+tzdata

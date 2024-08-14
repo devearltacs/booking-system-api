@@ -7,17 +7,18 @@ from django.contrib import admin
 
 # Create your models here.
 class Event(models.Model):
-    class CountryCode(models.TextChoices):
-        PH = "PH", _("+63")
-        AU = "AU", _("+61")
-        NZ = "NZ", _("+64")
+    CountryCodes = (
+        ("PH", _("+63")),
+        ("AU", _("+61")),
+        ("NZ", _("+64"))
+    )
     
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to="static/images")
     email = models.EmailField()
     contact = models.CharField(max_length=25)
-    dial_code = models.CharField(max_length=3, choices=CountryCode, default=CountryCode.PH)
+    dial_code = models.CharField(max_length=3, choices=CountryCodes, default="PH")
     date_start = models.DateField("date start")
     date_end = models.DateField("date end")
     date_created = models.DateTimeField("date created", auto_now=True)
