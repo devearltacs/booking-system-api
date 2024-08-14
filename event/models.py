@@ -1,16 +1,15 @@
 import datetime
 
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib import admin
 
 # Create your models here.
 class Event(models.Model):
     class CountryCode(models.TextChoices):
-        PH = "PH", _("+63")
-        AU = "AU", _("+61")
-        NZ = "NZ", _("+64")
+        PH = "PH", "+63"
+        AU = "AU", "+61"
+        NZ = "NZ", "+64"
     
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=255)
