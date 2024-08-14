@@ -18,7 +18,7 @@ class Event(models.Model):
     image = models.ImageField(upload_to="static/images")
     email = models.EmailField()
     contact = models.CharField(max_length=25)
-    dial_code = models.CharField(max_length=3, choices=CountryCodes, default=CountryCodes.PH)
+    dial_code = models.CharField(max_length=3, choices=CountryCodes, default="PH")
     date_start = models.DateField("date start")
     date_end = models.DateField("date end")
     date_created = models.DateTimeField("date created", auto_now=True)
