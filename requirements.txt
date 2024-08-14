@@ -2,7 +2,7 @@ asgiref
 colorama==0.4.6
 Django
 iniconfig==2.0.0
-packaging==24.1
+packaging
 pillow==10.4.0
 pluggy==1.5.0
 pytest==8.3.2
