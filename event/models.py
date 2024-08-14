@@ -14,7 +14,7 @@ class Event(models.Model):
     
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="images")
+    image = models.ImageField(upload_to="static/images")
     email = models.EmailField()
     contact = models.CharField(max_length=25)
     dial_code = models.CharField(max_length=3, choices=CountryCode, default=CountryCode.PH)
@@ -22,13 +22,16 @@ class Event(models.Model):
     date_end = models.DateField("date end")
     date_created = models.DateTimeField("date created", auto_now=True)
     date_updated = models.DateTimeField("date updated", auto_now_add=True)
+    
     def __str__(self):
         return self.title
+    
     @admin.display(
         boolean=True,
         ordering="date_start",
         description="Published recently?",
     )
+    
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date_created <= now
