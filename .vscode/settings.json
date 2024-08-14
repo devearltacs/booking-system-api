@@ -7,5 +7,12 @@
     "cSpell.words": [
         "epqku",
         "spnzbm"
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test.py"
     ]
 }
